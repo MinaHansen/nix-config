@@ -33,7 +33,7 @@
         hyprpolkitagent
 
         # Wallpaper / display
-        swww
+        awww
 
         # Clipboard
         cliphist
