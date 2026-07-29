@@ -9,11 +9,15 @@ let
              + "/releases/download/v1.06/morisawa-biz-ud-mincho-fonts.zip";
       hash   = "sha256-TuNYguBCHkln8jbker/HxTNZS8cI1vJDRrT1PGmNSqE=";
     };
-    nativeBuildInputs = [ pkgs.installFonts ];
-    sourceRoot        = "fonts/ttf";
+    installPhase = ''
+      find . -name "*.ttf" \
+        -exec install -Dm644 {} \
+        $out/share/fonts/truetype/biz-ud-mincho/ \;
+    '';
     meta = {
       description = "Morisawa BIZ UD Mincho typeface";
       license     = lib.licenses.ofl;
+      platforms   = lib.platforms.all;
     };
   };
 in
