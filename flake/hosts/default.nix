@@ -33,7 +33,7 @@
     keyboardLayout      = "jp106";
   };
 
-  networking.hostName = "minanixos";
-  time.timeZone       = "Europe/Oslo";
-  system.stateVersion = "25.11";
+  #networking.hostName = "minanixos";
+  #time.timeZone       = "Europe/Oslo";
+  #system.stateVersion = "25.11";
 }
