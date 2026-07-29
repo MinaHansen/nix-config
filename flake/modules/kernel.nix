@@ -37,7 +37,7 @@ in
       default = "thin";
     };
 
-    hzTick = lib.mkOption {
+    hzTicks = lib.mkOption {
       type = lib.types.enum [ "100" "250" "500" "1000" ];
       default = "1000";
     };
