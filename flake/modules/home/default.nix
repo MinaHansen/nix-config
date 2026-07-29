@@ -23,15 +23,15 @@
 
     home.packages = with pkgs; [
           # Core shell
-          quickshell        # use git version; nixpkgs stable may lag
-          matugen           # Material You color generation
+          quickshell
+          matugen
 
           # Hyprland ecosystem
           hyprlock
           hypridle
           hyprpicker
-          hyprsunset        # blue light filter
-          hyprpolkitagent   # polkit agent for Hyprland
+          hyprsunset
+          hyprpolkitagent
 
           # Wallpaper / display
           swww
@@ -49,7 +49,7 @@
           pavucontrol
 
           # GTK theming (Material You integration)
-          adw-gtk3          # adw-gtk-theme equivalent in nixpkgs
+          adw-gtk3
           gradience
 
           # Network management (used by Quickshell widgets)
@@ -62,6 +62,9 @@
           python3
           socat             # used for IPC scripts
           inotify-tools
+
+          # Utilities
+          kdePackages.ark
         ];
 
     programs.fish = {
