@@ -7,6 +7,7 @@ let
     src = pkgs.fetchzip {
       url    = "https://github.com/googlefonts/morisawa-biz-ud-mincho"
              + "/releases/download/v1.06/morisawa-biz-ud-mincho-fonts.zip";
+      hash   = "sha256-TuNYguBCHkln8jbker/HxTNZS8cI1vJDRrT1PGmNSqE=";
     };
     nativeBuildInputs = [ pkgs.installFonts ];
     sourceRoot        = "morisawa-biz-ud-mincho-fonts/fonts/ttf";
