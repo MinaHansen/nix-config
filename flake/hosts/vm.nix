@@ -1,7 +1,7 @@
 { ... }:
 {
   imports = [
-    ./hardware.nix
+    ./vm-hardware.nix
     ../../modules/boot.nix
     ../../modules/kernel.nix
     ../../modules/nix.nix
