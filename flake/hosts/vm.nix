@@ -2,7 +2,6 @@
 {
   imports = [
     ./default.nix
-    ./vm-hardware.nix
   ];
 
   my.kernel = {
