@@ -1,7 +1,7 @@
 { pkgs, config, ... }:
 {
-  home-manager.useGlobalPkgs   = true;
-  home-manager.useUserPackages = true;
+  #home-manager.useGlobalPkgs   = true;
+  #home-manager.useUserPackages = true;
 
   fonts.fontconfig.enable = true;
 
