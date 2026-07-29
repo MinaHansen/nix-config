@@ -20,43 +20,43 @@ in
       default = "bore";
       description = "Cachyos kernel variant (bore, rt-bore, eevdf, etc.)";
     };
-  };
 
-  processorOpt = lib.mkOption {
-    type = lib.types.str;
-    default = "x86_64-v3";
-    description = "Processor optimization target.";
-  };
+    processorOpt = lib.mkOption {
+      type = lib.types.str;
+      default = "x86_64-v3";
+      description = "Processor optimization target.";
+    };
 
-  cpusched = lib.mkOption {
-    type = lib.types.str;
-    default = "bore";
-  };
+    cpusched = lib.mkOption {
+      type = lib.types.str;
+      default = "bore";
+    };
 
-  lto = lib.mkOption {
-    type = lib.types.enum [ "none" "thin" "full" ];
-    default = "thin";
-  };
+    lto = lib.mkOption {
+      type = lib.types.enum [ "none" "thin" "full" ];
+      default = "thin";
+    };
 
-  hzTick = lib.mkOption {
-    type = lib.types.enum [ "100" "250" "500" "1000" ];
-    default = "1000";
-  };
+    hzTick = lib.mkOption {
+      type = lib.types.enum [ "100" "250" "500" "1000" ];
+      default = "1000";
+    };
 
-  bbr3 = lib.mkOption {
-    type = lib.types.bool;
-    default = true;
-  };
+    bbr3 = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+    };
 
-  hardened = lib.mkOption {
-    type = lib.types.bool;
-    default = false;
-  };
+    hardened = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+    };
 
-  fixGpp0Wakeup = lib.mkOption {
-    type = lib.types.bool;
-    default = false;
-    description = "Disable GPP0 ACPI wakeup (Gigabyte board workaround).";
+    fixGpp0Wakeup = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+      description = "Disable GPP0 ACPI wakeup (Gigabyte board workaround).";
+    };
   };
 
   config = {
