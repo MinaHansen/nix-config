@@ -6,10 +6,13 @@
 
   my.kernel = {
     variant       = "bore";
-    procesorOpt   = "x86_64-v3";
-    lto           = "thin";
-    fixGpp0Wakeup = false;
+    cpusched      = "bore";
+    processorOpt  = "x86_64-v3";
+    lto           = "full";
+    hzTick        = 1000;
+    bbr3          = true;
     hardened      = false;
+    fixGpp0Wakeup = true;
   };
 
   my.features = {

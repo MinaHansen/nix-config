@@ -14,10 +14,13 @@
 
   my.kernel = {
     variant       = "bore";
-    procesorOpt   = "x86_64-v3";
+    cpusched      = "bore";
+    processorOpt  = "x86_64-v3";
     lto           = "full";
-    fixGpp0Wakeup = true;
+    hzTick        = 1000;
+    bbr3          = true;
     hardened      = false;
+    fixGpp0Wakeup = true;
   };
 
   my.features = {

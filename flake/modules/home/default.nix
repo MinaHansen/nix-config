@@ -5,6 +5,8 @@
 
   fonts.fontconfig.enable = true;
 
+  programs.home-manager.enable = true;
+
   home-manager.users.mina = {
     home.stateVersion = "25.11";
 
@@ -69,8 +71,6 @@
           # Utilities
           kdePackages.ark
         ];
-
-    programs.home-manager.enable = true;
 
     programs.fish = {
       enable = true;
