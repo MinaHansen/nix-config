@@ -16,6 +16,7 @@
       specialArgs = { inherit inputs; };
       modules = [
         ./hosts/default.nix
+        ./hosts/vm.nix
         inputs.home-manager.nixosModules.home-manager
       ];
     };
