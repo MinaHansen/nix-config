@@ -1,29 +1,25 @@
 { ... }:
 {
   imports = [
-    ./hardware.nix
-    ../../modules/boot.nix
-    ../../modules/kernel.nix
-    ../../modules/nix.nix
-    ../../modules/input.nix
-    ../../modules/desktop.nix
-    ../../modules/features.nix
-    ../../modules/fonts.nix
-    ../../modules/home/default.nix
+    ./default.nix
   ];
 
   my.kernel = {
     variant       = "bore";
-    procesorOpt   = "x86_64";
-    lto           = "thin";
-    fixGpp0Wakeup = false;
+    cpusched      = "bore";
+    processorOpt  = "x86_64-v3";
+    lto           = "full";
+    hzTicks       = "1000";
+    bbr3          = true;
     hardened      = false;
+    fixGpp0Wakeup = true;
   };
 
   my.features = {
     steam    = true;
     discord  = true;
     devTools = true;
+    spotify  = true;
   };
 
   my.input = {

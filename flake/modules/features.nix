@@ -7,6 +7,7 @@ in
     steam = lib.mkEnableOption "Steam gaming platform";
     discord = lib.mkEnableOption "Discord";
     devTools = lib.mkEnableOption "Development tools";
+    spotify = lib.mkEnableOption "Spotify";
   };
 
   config = lib.mkMerge [
@@ -17,6 +18,9 @@ in
         gamescopeSession.enable = true;
       };
       hardware.graphics.enable32Bit = true;
+      environment.systemPackages = with pkgs; [
+        protonplus # Wine and proton compatibility manager
+      ];
     })
 
     (lib.mkIf cfg.discord {
@@ -50,9 +54,15 @@ in
         # Editors
         zed-editor
         jetbrains-mono
-        clion
-        rider
-        rust-rover
+        jetbrains.clion
+        jetbrains.rider
+        jetbrains.rust-rover
+      ];
+    })
+
+    (lib.mkIf cfg.spotify {
+      environment.systemPackages = with pkgs; [
+        spotify
       ];
     })
   ];

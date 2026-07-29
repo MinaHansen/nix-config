@@ -7,14 +7,17 @@ let
     src = pkgs.fetchzip {
       url    = "https://github.com/googlefonts/morisawa-biz-ud-mincho"
              + "/releases/download/v1.06/morisawa-biz-ud-mincho-fonts.zip";
-      hash   = "sha256-N2M5MzYzMGEzYjlkZWI1ODNjNzgyYzkzMGRmMmUzZjQ3OGZmYjk5NjNmNDY3YjZkODA0MTg3YWYy
-      ZTg1MzE0OQ=";
+      hash   = "sha256-TuNYguBCHkln8jbker/HxTNZS8cI1vJDRrT1PGmNSqE=";
     };
-    nativeBuildInputs = [ pkgs.installFonts ];
-    sourceRoot        = "morisawa-biz-ud-mincho-fonts/fonts/ttf";
+    installPhase = ''
+      find . -name "*.ttf" \
+        -exec install -Dm644 {} \
+        $out/share/fonts/truetype/biz-ud-mincho/ \;
+    '';
     meta = {
       description = "Morisawa BIZ UD Mincho typeface";
       license     = lib.licenses.ofl;
+      platforms   = lib.platforms.all;
     };
   };
 in
@@ -24,7 +27,7 @@ in
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif
-    noto-fonts-emoji
+    noto-fonts-color-emoji
     biz-ud-mincho
     biz-ud-gothic
     lxgw-wenkai

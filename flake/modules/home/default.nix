@@ -1,101 +1,104 @@
 { pkgs, config, ... }:
 {
-  home-manager.useGlobalPkgs   = true;
-  home-manager.useUserPackages = true;
-
+  programs.home-manager.enable = true;
   fonts.fontconfig.enable = true;
 
-  home-manager.users.mina = {
-    home.stateVersion = "25.11";
+  home.stateVersion = "25.11";
 
-    home.file.".local/share/fcitx5/rime/default.custom.yaml".text = ''
-          patch:
-            schema_list:
-              - schema: terra_pinyin
-    '';
+  home.file.".local/share/fcitx5/rime/default.custom.yaml".text = ''
+        patch:
+          schema_list:
+            - schema: terra_pinyin
+  '';
 
-    home.file.".local/share/fcitx5/rime/terra_pinyin.custom.yaml".text = ''
-          patch:
-            switches:
-              - name: simplification
-                reset: 1
-    '';
+  home.file.".local/share/fcitx5/rime/terra_pinyin.custom.yaml".text = ''
+        patch:
+          switches:
+            - name: simplification
+              reset: 1
+  '';
 
-    home.packages = with pkgs; [
-          # Core shell
-          quickshell        # use git version; nixpkgs stable may lag
-          matugen           # Material You color generation
+  home.packages = with pkgs; [
+        # Core shell
+        quickshell
+        matugen
 
-          # Hyprland ecosystem
-          hyprlock
-          hypridle
-          hyprpicker
-          hyprsunset        # blue light filter
-          hyprpolkitagent   # polkit agent for Hyprland
+        # Hyprland ecosystem
+        hyprlock
+        hypridle
+        hyprpicker
+        hyprsunset
+        hyprpolkitagent
 
-          # Wallpaper / display
-          swww
+        # Wallpaper / display
+        awww
 
-          # Clipboard
-          cliphist
-          wl-clipboard
+        # Clipboard
+        cliphist
+        wl-clipboard
 
-          # Notification
-          libnotify
-          swaynotificationcenter
+        # Notification
+        libnotify
+        swaynotificationcenter
 
-          # Media / audio control
-          playerctl
-          pavucontrol
+        # Media / audio control
+        playerctl
+        pavucontrol
 
-          # GTK theming (Material You integration)
-          adw-gtk3          # adw-gtk-theme equivalent in nixpkgs
-          gradience
+        # GTK theming (Material You integration)
+        adw-gtk3
+        #gradience # Archived upstream.
 
-          # Network management (used by Quickshell widgets)
-          networkmanagerapplet
+        # Network management (used by Quickshell widgets)
+        networkmanagerapplet
 
-          # Utilities used by dot scripts
-          fd
-          ripgrep
-          jq
-          python3
-          socat             # used for IPC scripts
-          inotify-tools
-        ];
+        # Browser
+        brave-origin
 
-    programs.fish = {
-      enable = true;
-        interactiveShellInit = ''
-          set -gx EDITOR hx  # adjust to your preference
-        '';
-        plugins = [
-          # Tide is a fast, feature-rich fish prompt
-          { name = "tide"; src = pkgs.fishPlugins.tide.src; }
-          { name = "z";    src = pkgs.fishPlugins.z.src; }
-        ];
-    };
+        # Utilities used by dot scripts
+        fd
+        ripgrep
+        jq
+        python3
+        socat             # used for IPC scripts
+        inotify-tools
 
-    programs.starship = {
-      enable                = true;
-      enableFishIntegration = true;
-    };
+        # Utilities
+        kdePackages.ark
+        gitkraken
+      ];
 
-    home.sessionVariables = {
-       GTK_IM_MODULE  = "fcitx";
-       QT_IM_MODULE   = "fcitx";
-       XMODIFIERS     = "@im=fcitx";
-       SDL_IM_MODULE  = "fcitx";
-    };
-
-    # The dots themselves live here as mutable config for easy iteration.
-    # Symlink to your cloned/forked dots-hyprland:
-    xdg.configFile."hypr".source =
-      config.lib.file.mkOutOfStoreSymlink
-        "/home/mina/.local/share/dots-hyprland/hypr";
-
-    xdg.configFile."quickshell".source =
-      config.lib.file.mkOutOfStoreSymlink
-        "/home/mina/.local/share/dots-hyprland/quickshell";
+  programs.fish = {
+    enable = true;
+      interactiveShellInit = ''
+        set -gx EDITOR hx  # adjust to your preference
+      '';
+      plugins = [
+        # Tide is a fast, feature-rich fish prompt
+        { name = "tide"; src = pkgs.fishPlugins.tide.src; }
+        { name = "z";    src = pkgs.fishPlugins.z.src; }
+      ];
   };
+
+  programs.starship = {
+    enable                = true;
+    enableFishIntegration = true;
+  };
+
+  home.sessionVariables = {
+     GTK_IM_MODULE  = "fcitx";
+     QT_IM_MODULE   = "fcitx";
+     XMODIFIERS     = "@im=fcitx";
+     SDL_IM_MODULE  = "fcitx";
+  };
+
+  # The dots themselves live here as mutable config for easy iteration.
+  # Symlink to your cloned/forked dots-hyprland:
+  xdg.configFile."hypr".source =
+    config.lib.file.mkOutOfStoreSymlink
+      "/home/mina/.local/share/dots-hyprland/hypr";
+
+  xdg.configFile."quickshell".source =
+    config.lib.file.mkOutOfStoreSymlink
+      "/home/mina/.local/share/dots-hyprland/quickshell";
 }

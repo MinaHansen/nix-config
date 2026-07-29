@@ -10,14 +10,24 @@
     };
   };
 
-  outputs = { self, nixpkgs, hyprland, ... }@inputs: {
-    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = { inherit inputs; };
-      modules = [
-        ./hosts/default.nix
-        inputs.home-manager.nixosModules.home-manager
-      ];
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+    {
+      nixosConfigurations = {
+        vm = nixpkgs.lib.nixosSystem {
+        system      = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules     = [
+          ./hosts/vm.nix
+          home-manager.nixosModules.default
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.mina = ./modules/home/default.nix;
+            };
+          }
+        ];
+      };
     };
   };
 }
