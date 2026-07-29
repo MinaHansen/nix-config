@@ -1,15 +1,8 @@
 { ... }:
 {
   imports = [
+    ./default.nix
     ./vm-hardware.nix
-    ../../modules/boot.nix
-    ../../modules/kernel.nix
-    ../../modules/nix.nix
-    ../../modules/input.nix
-    ../../modules/desktop.nix
-    ../../modules/features.nix
-    ../../modules/fonts.nix
-    ../../modules/home/default.nix
   ];
 
   my.kernel = {
