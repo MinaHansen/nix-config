@@ -50,9 +50,9 @@ in
         # Editors
         zed-editor
         jetbrains-mono
-        clion
-        rider
-        rust-rover
+        jetbrains.clion
+        jetbrains.rider
+        jetbrains.rust-rover
       ];
     })
   ];
