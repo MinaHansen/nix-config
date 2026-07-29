@@ -55,6 +55,9 @@
           # Network management (used by Quickshell widgets)
           networkmanagerapplet
 
+          # Browser
+          brave-origin
+
           # Utilities used by dot scripts
           fd
           ripgrep
