@@ -10,7 +10,7 @@ let
       hash   = "sha256-TuNYguBCHkln8jbker/HxTNZS8cI1vJDRrT1PGmNSqE=";
     };
     nativeBuildInputs = [ pkgs.installFonts ];
-    sourceRoot        = "morisawa-biz-ud-mincho-fonts/fonts/ttf";
+    sourceRoot        = "fonts/ttf";
     meta = {
       description = "Morisawa BIZ UD Mincho typeface";
       license     = lib.licenses.ofl;
