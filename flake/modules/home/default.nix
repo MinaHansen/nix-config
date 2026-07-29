@@ -49,7 +49,7 @@
 
         # GTK theming (Material You integration)
         adw-gtk3
-        gradience
+        #gradience # Archived upstream.
 
         # Network management (used by Quickshell widgets)
         networkmanagerapplet
