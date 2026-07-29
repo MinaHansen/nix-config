@@ -19,6 +19,7 @@
     steam    = true;
     discord  = true;
     devTools = true;
+    spotify  = true;
   };
 
   my.input = {
