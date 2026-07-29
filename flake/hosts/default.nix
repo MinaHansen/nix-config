@@ -9,7 +9,6 @@
     ../modules/desktop.nix
     ../modules/features.nix
     ../modules/fonts.nix
-    ../modules/home/default.nix
   ];
 
   my.kernel = {
