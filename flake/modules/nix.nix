@@ -4,7 +4,7 @@
     experimental-features = [ "nix-command" "flakes" ];
   };
 
-  nixpkgs.config.allowUnfree = false;
+  nixpkgs.config.allowUnfree = true;
 
   # Automatic updating
   system.autoUpgrade.enable = true;
