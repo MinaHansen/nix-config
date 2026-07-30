@@ -1,8 +1,6 @@
 { pkgs, config, ... }:
 {
-  #home-manager.useGlobalPkgs   = true;
-  #home-manager.useUserPackages = true;
-
+  programs.home-manager.enable = true;
   fonts.fontconfig.enable = true;
 
   home.stateVersion = "25.11";
@@ -67,6 +65,7 @@
 
         # Utilities
         kdePackages.ark
+        gitkraken
       ];
 
   programs.fish = {
