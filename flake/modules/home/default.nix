@@ -19,54 +19,55 @@
   '';
 
   home.packages = with pkgs; [
-        # Core shell
-        quickshell
-        matugen
+      kitty
+      # Core shell
+      quickshell
+      matugen
 
-        # Hyprland ecosystem
-        hyprlock
-        hypridle
-        hyprpicker
-        hyprsunset
-        hyprpolkitagent
+      # Hyprland ecosystem
+      hyprlock
+      hypridle
+      hyprpicker
+      hyprsunset
+      hyprpolkitagent
 
-        # Wallpaper / display
-        awww
+      # Wallpaper / display
+      awww
 
-        # Clipboard
-        cliphist
-        wl-clipboard
+      # Clipboard
+      cliphist
+      wl-clipboard
 
-        # Notification
-        libnotify
-        swaynotificationcenter
+      # Notification
+      libnotify
+      swaynotificationcenter
 
-        # Media / audio control
-        playerctl
-        pavucontrol
+      # Media / audio control
+      playerctl
+      pavucontrol
 
-        # GTK theming (Material You integration)
-        adw-gtk3
-        #gradience # Archived upstream.
+      # GTK theming (Material You integration)
+      adw-gtk3
+      #gradience # Archived upstream.
 
-        # Network management (used by Quickshell widgets)
-        networkmanagerapplet
+      # Network management (used by Quickshell widgets)
+      networkmanagerapplet
 
-        # Browser
-        brave-origin
+      # Browser
+      brave-origin
 
-        # Utilities used by dot scripts
-        fd
-        ripgrep
-        jq
-        python3
-        socat             # used for IPC scripts
-        inotify-tools
+      # Utilities used by dot scripts
+      fd
+      ripgrep
+      jq
+      python3
+      socat             # used for IPC scripts
+      inotify-tools
 
-        # Utilities
-        kdePackages.ark
-        gitkraken
-      ];
+      # Utilities
+      kdePackages.ark
+      gitkraken
+    ];
 
   programs.fish = {
     enable = true;
