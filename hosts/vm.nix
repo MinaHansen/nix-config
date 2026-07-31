@@ -8,7 +8,7 @@
     variant       = "bore";
     cpusched      = "bore";
     processorOpt  = "x86_64-v3";
-    lto           = "full";
+    lto           = "none";
     hzTicks       = "1000";
     bbr3          = true;
     hardened      = false;
@@ -16,10 +16,10 @@
   };
 
   my.features = {
-    steam    = true;
-    discord  = true;
+    steam    = false;
+    discord  = false;
     devTools = true;
-    spotify  = true;
+    spotify  = false;
   };
 
   my.input = {
