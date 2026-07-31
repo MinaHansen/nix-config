@@ -8,7 +8,7 @@
     variant       = "bore";
     cpusched      = "bore";
     processorOpt  = "x86_64-v3";
-    lto           = "none";
+    lto           = "slim";
     hzTicks       = "1000";
     bbr3          = true;
     hardened      = false;
