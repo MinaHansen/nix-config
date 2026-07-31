@@ -6,10 +6,12 @@
     portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
   };
 
-  # SDDM
-  services.displayManager.sddm = {
+  # UWSM
+  services.wayland-session = {
     enable = true;
-    wayland.enable = true;
+    sessionName = "hyprland";
+    sessionType = "wayland";
+    extraPackages = [ pkgs.uwsm ];
   };
 
   # XDG portals (file picker, screen share, etc.)
