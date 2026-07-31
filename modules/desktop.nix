@@ -7,9 +7,10 @@
     portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
   };
 
-  # UWSM
+  # UWSM and Git
   environment.systemPackages = [
     pkgs.uwsm
+    pkgs.git
   ];
 
   programs.uwsm = {

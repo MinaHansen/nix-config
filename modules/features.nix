@@ -3,10 +3,6 @@ let
   cfg = config.my.features;
 in
 {
-  environment.systemPackages = with pkgs; [
-    git
-  ];
-
   options.my.features = {
     steam = lib.mkEnableOption "Steam gaming platform";
     discord = lib.mkEnableOption "Discord";
