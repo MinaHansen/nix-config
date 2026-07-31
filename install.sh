@@ -17,6 +17,7 @@ fi
 if [ ! -f "$hosts_dir/hardware-configuration.nix" ]; then
     echo "Generating hardware configuration..."
     nixos-generate-config --root /mnt --dir "$hosts_dir"
+    rm "$hosts_dir/configuration.nix"
     git add "$hosts_dir/hardware-configuration.nix"
     echo "Hardware configuration generated."
 fi
