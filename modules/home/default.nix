@@ -1,5 +1,6 @@
 { pkgs, config, ... }:
 {
+  wayland.windowManager.hyprland.systemd.enable = false;
   programs.home-manager.enable = true;
   fonts.fontconfig.enable = true;
 
