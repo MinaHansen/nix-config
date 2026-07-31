@@ -2,16 +2,25 @@
 {
   programs.hyprland = {
     enable = true;
+    withUWSM = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
   };
 
   # UWSM
-  services.wayland-session = {
+  environment.systemPackages = [
+    pkgs.uwsm
+  ];
+
+  programs.uwsm = {
     enable = true;
-    sessionName = "hyprland";
-    sessionType = "wayland";
-    extraPackages = [ pkgs.uwsm ];
+    waylandCompositors = {
+     hyprland = {
+       prettyName = "Hyprland";
+       comment = "Hyprland compositor managed by UWSM";
+       binPath = "${inputs.hyprland.packages.${pkgs.system}.hyprland}/bin/hyprland";
+     };
+    };
   };
 
   # XDG portals (file picker, screen share, etc.)
