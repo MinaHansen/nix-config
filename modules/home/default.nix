@@ -1,5 +1,9 @@
 { pkgs, config, ... }:
 {
+  imports = [
+    ./end4-dots.nix
+  ];
+
   programs.home-manager.enable = true;
   fonts.fontconfig.enable = true;
 
