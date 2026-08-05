@@ -1,6 +1,5 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 {
-  wayland.windowManager.hyprland.systemd.enable = false;
   programs.home-manager.enable = true;
   fonts.fontconfig.enable = true;
 
@@ -21,18 +20,8 @@
 
   home.packages = with pkgs; [
       kitty
-      quickshell
-      matugen
-      hyprlock
-      hypridle
-      hyprpicker
-      hyprsunset
-      hyprpolkitagent
-      awww
-      cliphist
       wl-clipboard
       libnotify
-      swaynotificationcenter
       playerctl
       pavucontrol
       adw-gtk3
@@ -42,8 +31,6 @@
       ripgrep
       jq
       python3
-      socat             # used for IPC scripts
-      inotify-tools
 
       kdePackages.ark
       gitkraken
@@ -72,11 +59,4 @@
      SDL_IM_MODULE  = "fcitx";
   };
 
-  xdg.configFile."hypr".source =
-    config.lib.file.mkOutOfStoreSymlink
-      "/home/mina/.local/share/dots-hyprland/hypr";
-
-  xdg.configFile."quickshell".source =
-    config.lib.file.mkOutOfStoreSymlink
-      "/home/mina/.local/share/dots-hyprland/quickshell";
 }

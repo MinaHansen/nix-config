@@ -4,6 +4,7 @@
     /etc/nixos/hardware-configuration.nix
     ../../profiles/base.nix
     ../../profiles/desktop.nix
+    ../../profiles/niri.nix
     ../../profiles/development.nix
   ];
 
