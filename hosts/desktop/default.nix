@@ -5,9 +5,12 @@
     ../../profiles/base.nix
     ../../profiles/desktop.nix
     ../../profiles/development.nix
+    ../../gaming.nix
+    ../../media.nix
+    ../../social.nix
   ];
 
-  networking.hostName = "vmminanixos";
+  networking.hostName = "desktop-nixos";
   time.timeZone = "Europe/Oslo";
 
   my.input = {
@@ -19,7 +22,7 @@
     variant = "bore";
     cpusched = "bore";
     processorOpt = "x86_64-v3";
-    lto = "none";
+    lto = "full";
     hzTicks = "1000";
     bbr3 = true;
     hardened = false;

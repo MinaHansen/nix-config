@@ -25,6 +25,7 @@ let
 in
 {
   nixosConfigurations = lib.mapAttrs mkHost {
+    desktop.modules = [ ./desktop ];
     vm.modules = [ ./vm ];
   };
 }
