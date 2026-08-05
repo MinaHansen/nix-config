@@ -16,5 +16,6 @@
   in
   {
     nixosConfigurations = hosts.nixosConfigurations;
+    nixosInstallMedia = hosts.nixosInstallMedia;
   };
 }

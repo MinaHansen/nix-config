@@ -22,10 +22,21 @@ let
         }
       ] ++ modules;
     };
-in
-{
   nixosConfigurations = lib.mapAttrs mkHost {
     desktop.modules = [ ./desktop ];
     vm.modules = [ ./vm ];
   };
+in
+{
+  inherit nixosConfigurations;
+
+  nixosInstallMedia = lib.mapAttrs (_: host: host.extendModules {
+    modules = [
+      ({ modulesPath, ... }: {
+        imports = [
+          (modulesPath + "/installer/cd-dvd/installation-cd-minimal.nix")
+        ];
+      })
+    ];
+  }) nixosConfigurations;
 }
