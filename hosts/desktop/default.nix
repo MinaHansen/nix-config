@@ -29,5 +29,9 @@
     fixGpp0Wakeup = true;
   };
 
+  # Game controller support
+  hardware.xone.enable = true;
+  hardware.xpadneo.enable = true;
+
   fileSystems = { };
 }

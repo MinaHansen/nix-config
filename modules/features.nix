@@ -17,6 +17,7 @@ in
         remotePlay.openFirewall = true;
         gamescopeSession.enable = true;
       };
+      programs.gamemode.enable = true;
       hardware.graphics.enable32Bit = true;
       environment.systemPackages = with pkgs; [
         protonplus # Wine and proton compatibility manager

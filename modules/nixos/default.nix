@@ -6,5 +6,6 @@
     ../kernel.nix
     ../nix.nix
     ../user.nix
+    ../bravepolicy.nix
   ];
 }
