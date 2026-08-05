@@ -1,0 +1,4 @@
+{ ... }:
+{
+  my.features.steam = true;
+}
