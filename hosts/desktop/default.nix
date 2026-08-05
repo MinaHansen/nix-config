@@ -5,9 +5,9 @@
     ../../profiles/base.nix
     ../../profiles/desktop.nix
     ../../profiles/development.nix
-    ../../gaming.nix
-    ../../media.nix
-    ../../social.nix
+    ../../profiles/gaming.nix
+    ../../profiles/media.nix
+    ../../profiles/social.nix
   ];
 
   networking.hostName = "desktop-nixos";
