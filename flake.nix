@@ -10,24 +10,12 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
-    {
-      nixosConfigurations = {
-        vm = nixpkgs.lib.nixosSystem {
-        system      = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules     = [
-          ./hosts/vm.nix
-          home-manager.nixosModules.default
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.mina = ./modules/home/default.nix;
-            };
-          }
-        ];
-      };
-    };
+  outputs = inputs @ { nixpkgs, ... }:
+  let
+    inherit (nixpkgs) lib;
+    hosts = import ./hosts { inherit inputs lib; };
+  in
+  {
+    nixosConfigurations = hosts.nixosConfigurations;
   };
 }

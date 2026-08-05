@@ -1,0 +1,4 @@
+{ ... }:
+{
+  my.features.devTools = true;
+}
