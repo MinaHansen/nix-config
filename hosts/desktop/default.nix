@@ -1,7 +1,7 @@
 { ... }:
 {
   imports = [
-    #/etc/nixos/hardware-configuration.nix
+    /etc/nixos/hardware-configuration.nix
     ../../profiles/base.nix
     ../../profiles/desktop.nix
     ../../profiles/niri.nix
