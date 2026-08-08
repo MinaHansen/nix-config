@@ -70,21 +70,9 @@ in
     boot.supportedFilesystems = [ "bcachefs" ];
     hardware.enableRedistributableFirmware = true;
 
-    # Disable GPP0 wakeup source after every boot/resume to prevent the system from waking immediately.
-    # This is a common issue with Gigabyte motherboards.
-    systemd.services.disable-gpp0-wakeup = lib.mkIf cfg.fixGpp0Wakeup {
-      description = "Disable GPP0 ACPI wakeup source";
-      wantedBy = [ "multi-user.target" "suspend.target" ];
-      after = [ "suspend.target" ];
-      serviceConfig = {
-        Type = "oneshot";
-        RemainAfterExit = true;
-        ExecStart = pkgs.writeShellScript "disable-gpp0-wakeup" ''
-          if grep -qP "^GPP0.*?enabled" /proc/acpi/wakeup; then
-            echo GPP0 > /proc/acpi/wakeup
-          fi
-        '';
-      };
-    };
+    # Use udev rules to disable GPP0 wakeup on Gigabyte boards.
+    services.udev.extraRules = ''
+    ACTION=="add", SUBSYSTEM=="pci", KERNEL=="0000:00:01.1", ATTR{power/wakeup}="disabled"
+    '';
   };
 }
