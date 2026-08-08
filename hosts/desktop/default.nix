@@ -1,7 +1,7 @@
 { ... }:
 {
   imports = [
-    /etc/nixos/hardware-configuration.nix
+    ./hardware-configuration.nix
     ../../profiles/base.nix
     ../../profiles/bluetooth.nix
     ../../profiles/desktop.nix
