@@ -1,5 +1,15 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${config.programs.niri.package}/bin/niri-session";
+        user = "mina";
+      };
+    };
+  };
+
   # Git is available system-wide for the desktop session.
   environment.systemPackages = [ pkgs.git ];
 
