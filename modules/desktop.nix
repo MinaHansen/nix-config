@@ -6,8 +6,8 @@
     theme = "default";
   };
 
-  # Start Niri as the default Wayland session in SDDM.
-  services.displayManager.defaultSession = "niri";
+  # Start KDE Plasma as the default Wayland session in SDDM.
+  services.displayManager.defaultSession = "plasma";
 
   # Git is available system-wide for the desktop session.
   environment.systemPackages = [ pkgs.git ];

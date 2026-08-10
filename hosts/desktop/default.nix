@@ -5,7 +5,7 @@
     ../../profiles/base.nix
     ../../profiles/bluetooth.nix
     ../../profiles/desktop.nix
-    ../../profiles/niri.nix
+    ../../profiles/plasma.nix
     ../../profiles/development.nix
     ../../profiles/gaming.nix
     ../../profiles/media.nix

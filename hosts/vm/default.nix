@@ -4,7 +4,7 @@
     ./hardware-configuration.nix
     ../../profiles/base.nix
     ../../profiles/desktop.nix
-    ../../profiles/niri.nix
+    ../../profiles/plasma.nix
     ../../profiles/development.nix
   ];
 
