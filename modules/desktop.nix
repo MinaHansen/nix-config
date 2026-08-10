@@ -1,14 +1,13 @@
-{ pkgs, config, ... }:
+{ pkgs, inputs, ... }:
 {
-  services.greetd = {
+  imports = [inputs.silentSDDM.nixosModules.default];
+  programs.silentSDDM = {
     enable = true;
-    settings = {
-      default_session = {
-        command = "${config.programs.niri.package}/bin/niri-session";
-        user = "mina";
-      };
-    };
+    theme = "default";
   };
+
+  # Start Niri as the default Wayland session in SDDM.
+  services.displayManager.defaultSession = "niri";
 
   # Git is available system-wide for the desktop session.
   environment.systemPackages = [ pkgs.git ];
