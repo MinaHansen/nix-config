@@ -1,6 +1,6 @@
 { ... }:
 {
-  environment.etc."brave/policies/GroupPolicy.json".text = ''
+  environment.etc."brave/policies/managed/policy.json".text = ''
     {
       "BraveRewardsEnabled": false,
       "BraveWalletDisabled": true,
