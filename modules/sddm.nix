@@ -14,5 +14,5 @@ in
     theme = "default";
   };
 
-  services.displayManager.defaultSession = type;
+  config.services.displayManager.defaultSession = type;
 }
