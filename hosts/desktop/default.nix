@@ -31,6 +31,10 @@
     fixGpp0Wakeup = true;
   };
 
+  my.desktop = {
+    type = "hyprland";
+  };
+
   # Game controller support
   hardware.xone.enable = true;
   hardware.xpadneo.enable = true;

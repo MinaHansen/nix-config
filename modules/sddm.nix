@@ -1,6 +1,7 @@
 { inputs, config, lib, ... }:
 let
   cfg = config.my.desktop;
+  type = cfg.type;
 in
 {
   options.my.desktop = {
@@ -13,5 +14,5 @@ in
     theme = "default";
   };
 
-  services.displayManager.defaultSession = cfg.type;
+  services.displayManager.defaultSession = type;
 }
