@@ -23,7 +23,7 @@
   outputs = inputs @ { nixpkgs, dots-hyprland, ... }:
   let
     inherit (nixpkgs) lib;
-    hosts = import ./hosts { inherit inputs lib; };
+    hosts = import ./hosts { inherit inputs lib dots-hyprland; };
   in
   {
     nixosConfigurations = hosts.nixosConfigurations;
