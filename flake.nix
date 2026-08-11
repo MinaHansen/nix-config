@@ -12,6 +12,10 @@
       url = "github:uiriansan/SilentSDDM";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+    };
   };
 
   outputs = inputs @ { nixpkgs, ... }:

@@ -4,7 +4,7 @@
     ./hardware-configuration.nix
     ../../profiles/base.nix
     ../../profiles/desktop.nix
-    ../../profiles/plasma.nix
+    ../../profiles/hyprland.nix
     ../../profiles/development.nix
   ];
 
@@ -20,11 +20,15 @@
     variant = "bore";
     cpusched = "bore";
     processorOpt = "x86_64-v3";
-    lto = "none";
+    lto = "thin";
     hzTicks = "1000";
     bbr3 = true;
     hardened = false;
     fixGpp0Wakeup = true;
+  };
+
+  my.desktop = {
+    type = "hyprland";
   };
 
   fileSystems = { };
