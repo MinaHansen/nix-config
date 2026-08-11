@@ -1,29 +1,8 @@
-{ inputs, pkgs, dots-hyprland, ... }:
+{ inputs, pkgs, ... }:
 {
   imports = [
     ../modules/sddm.nix
   ];
-
-  programs.dots-hyprland = {
-    enable = true;
-    source = dots-hyprland + "/configs";
-    packageSet = "essential";
-    mode = "declarative";
-
-    quickshell = {
-      appearance.transparency = false;
-      bar.workspaces.shown = 10;
-      bar.workspaces.variant = "hefty";
-    };
-
-    hyprland = {
-      general.gapsIn = 4;
-      general.gapsOut = 7;
-      decoration.rounding = 16;
-      decoration.blurEnabled = true;
-      night.colorTemperature = 4500;
-    };
-  };
 
   programs.hyprland = {
     enable = true;
