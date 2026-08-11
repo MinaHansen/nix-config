@@ -9,7 +9,7 @@ in
   };
 
   imports = [inputs.silentSDDM.nixosModules.default];
-  programs.silentSDDM = {
+  config.programs.silentSDDM = {
     enable = true;
     theme = "default";
   };
