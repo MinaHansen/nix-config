@@ -1,4 +1,4 @@
-{ inputs, lib }:
+{ inputs, lib, dots-hyprland }:
 let
   mkHost =
     name:
@@ -8,7 +8,7 @@ let
     }:
     inputs.nixpkgs.lib.nixosSystem {
       inherit system;
-      specialArgs = { inherit inputs; };
+      specialArgs = { inherit inputs dots-hyprland; };
       modules = [
         ../modules/nixos
         ./common.nix
