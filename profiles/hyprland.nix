@@ -16,7 +16,9 @@
       enable = true;
       source = dots-hyprland + "/configs";
       packageSet = "essential";
-      mode = "declarative";
+      mode = "hybrid";
+
+      configuration.copyFishConfig = false;
 
       quickshell = {
         appearance.transparency = false;

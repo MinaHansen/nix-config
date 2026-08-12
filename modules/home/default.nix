@@ -3,6 +3,8 @@
   programs.home-manager.enable = true;
   fonts.fontconfig.enable = true;
 
+  home.username = "mina";
+  home.homeDirectory = "/home/mina";
   home.stateVersion = "26.05";
 
   home.file.".local/share/fcitx5/rime/default.custom.yaml".text = ''
