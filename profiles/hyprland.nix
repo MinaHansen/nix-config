@@ -7,7 +7,7 @@
 
   nixpkgs.overlays = [ dots-hyprland.overlays.default ];
 
-  home-manager.users.mina = {
+  home-manager.users.mina = { lib, config, ... }: {
     imports = [
       dots-hyprland.homeManagerModules.default
     ];
@@ -19,21 +19,13 @@
       mode = "hybrid";
 
       configuration.copyFishConfig = false;
-
-      quickshell = {
-        appearance.transparency = false;
-        bar.workspaces.shown = 10;
-        bar.workspaces.variant = "hefty";
-      };
-
-      hyprland = {
-        general.gapsIn = 4;
-        general.gapsOut = 7;
-        decoration.rounding = 16;
-        decoration.blurEnabled = true;
-        night.colorTemperature = 4500;
-      };
+      configuration.copyHyprlandConfig = false;
+      configuration.copyMiscConfig = false;
     };
+
+    home.packages = with pkgs; [
+      waybar
+    ];
   };
 
   programs.hyprland = {
@@ -46,17 +38,5 @@
     package = pkgs.mesa;
     enable32Bit = true;
     package32 = pkgs.pkgsi686Linux.mesa;
-  };
-
-  # Hyprland specific dotfiles
-  home-manager.users.mina = {
-    xdg.configFile."hypr".source = ../assets/hypr;
-    xdg.configFile."hypr".recursive = true;
-
-    xdg.configFile."kitty".source = ../assets/kitty;
-    xdg.configFile."kitty".recursive = true;
-
-    xdg.configFile."fish".source = ../assets/fish;
-    xdg.configFile."fish".recursive = true;
   };
 }
