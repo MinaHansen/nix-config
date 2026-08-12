@@ -32,6 +32,10 @@
       jq
       python3
 
+      nil
+      nixd
+      nixfmt
+
       kdePackages.ark
       gitkraken
     ];
