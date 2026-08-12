@@ -47,4 +47,16 @@
     enable32Bit = true;
     package32 = pkgs.pkgsi686Linux.mesa;
   };
+
+  # Hyprland specific dotfiles
+  home-manager.users.mina = {
+    xdg.configFile."hypr".source = ../assets/hypr;
+    xdg.configFile."hypr".recursive = true;
+
+    xdg.configFile."kitty".source = ../assets/kitty;
+    xdg.configFile."kitty".recursive = true;
+
+    xdg.configFile."fish".source = ../assets/fish;
+    xdg.configFile."fish".recursive = true;
+  };
 }
