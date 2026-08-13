@@ -1,4 +1,4 @@
-{ inputs, lib, dots-hyprland }:
+{ inputs, lib, caelestia-shell }:
 let
   mkHost =
     name:
@@ -8,7 +8,7 @@ let
     }:
     inputs.nixpkgs.lib.nixosSystem {
       inherit system;
-      specialArgs = { inherit inputs dots-hyprland; };
+      specialArgs = { inherit inputs caelestia-shell; };
       modules = [
         ../modules/nixos
         ./common.nix
