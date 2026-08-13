@@ -5,7 +5,7 @@
     ../../profiles/base.nix
     ../../profiles/bluetooth.nix
     ../../profiles/desktop.nix
-    ../../profiles/hyprland.nix
+    ../../profiles/sddm.nix
     ../../profiles/development.nix
     ../../profiles/gaming.nix
     ../../profiles/media.nix

@@ -4,7 +4,7 @@
     ./hardware-configuration.nix
     ../../profiles/base.nix
     ../../profiles/desktop.nix
-    ../../profiles/hyprland.nix
+    ../../profiles/sddm.nix
     ../../profiles/development.nix
   ];
 

@@ -13,17 +13,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
+    caelestia-shell = {
+      url = "github:caelestia-dots/shell";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    dots-hyprland.url = "github:celesrenata/end-4-flakes/upstream-sync-2026";
   };
 
-  outputs = inputs @ { nixpkgs, dots-hyprland, ... }:
+  outputs = inputs @ { nixpkgs, caelestia-shell, ... }:
   let
     inherit (nixpkgs) lib;
-    hosts = import ./hosts { inherit inputs lib dots-hyprland; };
+    hosts = import ./hosts { inherit inputs lib caelestia-shell; };
   in
   {
     nixosConfigurations = hosts.nixosConfigurations;
